@@ -2,8 +2,6 @@
 
 A straightforward trading bot for Kalshi prediction markets that uses Perplexity AI for all AI tasks: real-time market research, probability extraction, and structured betting decisions.
 
-![Trading Bot Flowchart](KalshiDeepTradingBot.png)
-
 ![Trading Bot Research Example](research-example.png)
 
 ## ⚠️ Financial Disclaimer
