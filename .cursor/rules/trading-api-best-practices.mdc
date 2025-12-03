@@ -16,17 +16,11 @@ For this trading bot project, **always consult official documentation** for:
 - Event and market filtering parameters
 - Rate limiting and error handling
 
-### OpenAI API (Structured Outputs)
-- Current response format for `beta.chat.completions.parse`
-- Pydantic model integration patterns
-- Error handling for parsing failures
-- Token limits and model-specific features
-
-### Octagon Deep Research API
-- Request/response formats
+### Perplexity API (Research + Structured Output)
+- Request/response formats for Sonar models
+- Real-time search and recency filtering
+- JSON extraction from model responses
 - Rate limiting and timeout handling
-- Authentication requirements
-- Error responses and retry patterns
 
 ## Critical Areas Requiring Documentation Lookup
 
@@ -48,20 +42,20 @@ For this trading bot project, **always consult official documentation** for:
 ## Example Implementation Pattern
 
 ```python
-# ✅ Good: Look up current OpenAI structured outputs format
-response = client.beta.chat.completions.parse(...)
-analysis = response.choices[0].message.parsed  # Based on official docs
+# ✅ Good: Parse JSON from Perplexity response with proper extraction
+response = await client.post(url, json=request_body)
+content = response.json()["choices"][0]["message"]["content"]
+json_data = extract_json_from_text(content)  # Handle <think> blocks, markdown
 
-# ❌ Bad: Assume or guess API formats
-analysis = response.choices[0].parsed  # Assumption-based approach
+# ❌ Bad: Assume clean JSON response
+data = json.loads(response.json()["choices"][0]["message"]["content"])
 ```
 
 ## Project-Specific References
 
 Always reference these official sources:
 - [Kalshi API Documentation](https://docs.kalshi.com/)
-- [OpenAI API Reference](https://platform.openai.com/docs/api-reference)
-- [Octagon API Documentation](https://docs.octagon.ai/)
+- [Perplexity API Documentation](https://docs.perplexity.ai/)
 
 ## Risk Considerations
 

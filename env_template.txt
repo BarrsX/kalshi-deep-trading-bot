@@ -17,20 +17,18 @@ KALSHI_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\nyour_private_key_content_he
 KALSHI_USE_DEMO=true
 
 # =============================================================================
-# OCTAGON DEEP RESEARCH API CONFIGURATION
+# PERPLEXITY API CONFIGURATION (Research + Analysis)
 # =============================================================================
 
-# Octagon API credentials
-OCTAGON_API_KEY=your_octagon_api_key_here
-OCTAGON_BASE_URL=https://api-gateway.octagonagents.com/v1
+# Perplexity API credentials - Get from https://www.perplexity.ai/settings/api
+# Perplexity is used for ALL AI tasks: research, probability extraction, and betting decisions
+PERPLEXITY_API_KEY=your_perplexity_api_key_here
 
-# =============================================================================
-# OPENAI API CONFIGURATION
-# =============================================================================
-
-# OpenAI API for structured betting decisions
-OPENAI_API_KEY=your_openai_api_key_here
-OPENAI_MODEL=gpt-5
+# Perplexity model to use:
+#   - sonar: Fast, cost-effective for simple queries
+#   - sonar-pro: More thorough research, better for complex analysis (recommended for research)
+#   - sonar-reasoning: Best for complex reasoning and structured output (used for analysis)
+PERPLEXITY_MODEL=sonar-pro
 
 # =============================================================================
 # BOT CONFIGURATION
@@ -75,16 +73,13 @@ MAX_HEDGE_AMOUNT=50.0         # Maximum hedge amount per bet in dollars
 #    MIIEpAIBAAKCAQEA...
 #    -----END RSA PRIVATE KEY-----"
 
-# 3. Get Octagon API key:
-#    - Contact Octagon team for API access
-#    - Replace OCTAGON_API_KEY with your actual key
+# 3. Get Perplexity API key:
+#    - Go to https://www.perplexity.ai/settings/api
+#    - Create an API key (requires Perplexity Pro subscription or API credits)
+#    - Replace PERPLEXITY_API_KEY with your actual key
+#    - Recommended model: sonar-pro for research, sonar-reasoning for analysis
 
-# 4. Get OpenAI API key:
-#    - Go to https://platform.openai.com/api-keys
-#    - Create a new API key
-#    - Ensure you have access to GPT-4 models
-
-# 5. Test setup:
+# 4. Test setup:
 #    - Start with DRY_RUN=true and KALSHI_USE_DEMO=true
 #    - Test with small MAX_EVENTS_TO_ANALYZE (5-10) first
 #    - Only use production after thorough testing

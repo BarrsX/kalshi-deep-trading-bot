@@ -1,10 +1,7 @@
 [project]
 name = "kalshi-trading-bot"
-version = "1.0.0"
-description = "Simple Kalshi trading bot with Octagon research and OpenAI decision making"
-authors = [
-    {name = "Octagon", email = "support@octagon.ai"}
-]
+version = "1.1.0"
+description = "Kalshi prediction market trading bot with Perplexity AI for real-time research and analysis"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
@@ -16,7 +13,6 @@ dependencies = [
     "loguru>=0.7.0",
     "rich>=13.0.0",
     "cryptography>=41.0.0",
-    "openai>=1.0.0",
 ]
 
 [project.optional-dependencies]
@@ -40,6 +36,7 @@ include = [
     "config.py",
     "kalshi_client.py",
     "research_client.py",
+    "perplexity_utils.py",
     "betting_models.py",
 ]
 

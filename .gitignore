@@ -105,7 +105,6 @@ temp_files/
 
 # Sensitive configuration
 kalshi_config.json
-octagon_config.json 
 .kalshi.demo.pem
 .kalshi.pem
 
